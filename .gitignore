@@ -1,1 +1,14 @@
 .vagrant/
+
+# Binaires du projet
+src/*/bin/
+src/*/d/
+src/*/lib/
+src/*/o/
+src/*/share/
+src/*/Share/
+src/*/BuildRoot/Configuration.Vrui
+src/Vrui-3.1-002/ExamplePrograms/bin/
+src/Vrui-3.1-002/ExamplePrograms/d/
+src/Vrui-3.1-002/ExamplePrograms/o/
+

@@ -22,7 +22,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
 #ifndef SOUND_CONFIG_INCLUDED
 #define SOUND_CONFIG_INCLUDED
 
-#define SOUND_CONFIG_HAVE_ALSA 1
-#define SOUND_CONFIG_HAVE_SPEEX 1
+#define SOUND_CONFIG_HAVE_ALSA 0
+#define SOUND_CONFIG_HAVE_SPEEX 0
 
 #endif
