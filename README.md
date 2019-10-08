@@ -64,29 +64,32 @@ RawKinectViewer -compress 0
 ![Vidéo de calibration 10:10](https://www.youtube.com/watch?v=EW2PtRsQQr0&feature=youtu.be&t=10m10s)
 
 Ensuite, il faut calibrer la projection + l'amplitude de hauteur de sable dans le bac.
+Le bac doit être rempli de sable.
+Essayez de créer un relief avec des points hauts et des points bas (Ex : une moitié du bac trés haute, une autre moitié trés basse)
+
 1. Régler le projecteur pour que l'image recouvre la totalité du bac.
 2. Vous aurez besoin d'une mire, l'outil de calibration attend un disque blanc de 120 mm. C'est précisément la taille d'un CD recouvert de papier. Tracez-y une croix au centre.
 Vous ne pouvez pas tenir le disque à la main pour la calibration, ajouter un manche en fil de fer.
-2. Démarrer l'outil de calibration en renseignant la résolution de l'image projetée
+3. Démarrer l'outil de calibration en renseignant la résolution de l'image projetée
 ```
 cd ~/src/SARndbox-2.6
 ./bin/CalibrateProjector -s <width> <height>
 ```
-3. Aprés une image rouge, apparait un fond noir, avec une croix blanche et un rectangle jaune.
-3. Mettre l'image en plein écran **[F11]**
-4. Même combat que pour les outils précédents, il faut binder 2 touches. Appuyer sur une touche (Par ex. **[c]**) et bouger la souris. Choisir la fonction **Capture** en cliquant dans le menu. Un popup doit alors apparaitre, appuyer sur une seconde touche différente (par ex. **[v]**)
+4. Aprés une image rouge, apparait un fond noir, avec une croix blanche et un rectangle jaune.
+5. Mettre l'image en plein écran **[F11]**
+6. Même combat que pour les outils précédents, il faut binder 2 touches. Appuyer sur une touche (Par ex. **[c]**) et bouger la souris. Choisir la fonction **Capture** en cliquant dans le menu. Un popup doit alors apparaitre, appuyer sur une seconde touche différente (par ex. **[v]**)
 Ces touches vont vous permettre de calibrer la projection et les hauteurs de sable du bac
-5. Positionner le disque en faisant correspondre la croix blanche avec la croix du disque.
-6. Vous voyez à présent votre main et le disque. Si votre main n'apparait pas au bon endroit, pas de panique, aprés la calibration tout rentrera dans l'ordre.
+7. Positionner le disque en faisant correspondre la croix blanche avec la croix du disque.
+8. Vous voyez à présent votre main et le disque. Si votre main n'apparait pas au bon endroit, pas de panique, aprés la calibration tout rentrera dans l'ordre.
 Le disque va être détecté par la Kinect, une fois détecté il apparait en vert et votre main en jaune. Si vous tenez le disque à la main, la Kinect ne peut pas les différencier et la calibration ne peut pas se faire. 
-6. Une fois le disque apparu en vert et les croix alignées, cappuyer sur la touche choisie (**[c]**). Aprés un temps de pause, la croix blanche se déplace.
+9. Une fois le disque apparu en vert et les croix alignées, cappuyer sur la touche choisie (**[c]**). Aprés un temps de pause, la croix blanche se déplace.
 Vous devez maitenir le disque en position vert pendant 2 secondes.
 Ce message apparait alors dans la console.
 ```
 CalibrateProjector: Capturing 60 tie point frames...done
 ```
-7. Répéter l'opération
-8. Si la calibration est ok, un message de ce type apparait dans la console.
+10. Répéter l'opération
+11. Si la calibration est ok, un message de ce type apparait dans la console.
 ```
   -323.634      -16.502      856.369       123602
    59.6915     -480.355      342.951      60259.6
@@ -94,9 +97,13 @@ CalibrateProjector: Capturing 60 tie point frames...done
 RMS calibration residual: 10.2281
 Z range of collected tie points: [-0.0220997, -0.0187916]
 ```
-9. Si ce message apparait, ce n'est pas bon. Il faut alors reprendre la calibration, la croix blanche revient au premier point.
+12. Si ce message apparait, ce n'est pas bon. Il faut alors reprendre la calibration, la croix blanche revient au premier point.
 ```
 Calibration error: Some tie points have negative projection weights. Please start from scratch
 ```
 # Utilisation
+Creusez des reliefs pour faire apparaitre les nappes phréatiques.
+Formez des montagnes pour faire apparaître la neige.
+
+Mettre la main ouverte au dessus du bas permet de faire pleuvoir :D !
 
