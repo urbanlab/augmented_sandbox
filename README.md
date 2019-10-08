@@ -18,9 +18,7 @@ https://arsandbox.ucdavis.edu/instructions/hardware-2/
 
 # Installation / Démarrage
 suivre les instructions détaillées ici : http://idav.ucdavis.edu/~okreylos/ResDev/SARndbox/index.html
-
-__**!!!! La version 2.6 a posé des problèmes de calibration, j'ai installé la 2.5 !!!!!**__
-
+___
 Pour installer une version précédente, la procédure est la même, sauf :
 - les versions de VRui et de l'outil Kinect doivent être en phase : pour la SAndbox 2.5, il faut aller chercher les versions *Vrui-4.5-004* et *Kinect-3.5*
 - Pour télécharger et compiler *Vrui-4.5-004*, il faut modifier le script /Install VRui/Build-Ubuntu.sh comme suit (lignes 37/38) afin de forcer les versions
@@ -30,6 +28,7 @@ Pour installer une version précédente, la procédure est la même, sauf :
 wget -O - http://idav.ucdavis.edu/~okreylos/ResDev/Vrui/Vrui-4.5-004.tar.gz | tar xfz -
 cd Vrui-4.5-004
 ```
+___
 
 ## Calibration de la caméra (Step 8/9)
 ![Vidéo de calibration 4:10](https://www.youtube.com/watch?v=EW2PtRsQQr0&feature=youtu.be&t=4m10s)
@@ -67,6 +66,7 @@ RawKinectViewer -compress 0
 Ensuite, il faut calibrer la projection + l'amplitude de hauteur de sable dans le bac.
 1. Régler le projecteur pour que l'image recouvre la totalité du bac.
 2. Vous aurez besoin d'une mire, l'outil de calibration attend un disque blanc de 120 mm. C'est précisément la taille d'un CD recouvert de papier. Tracez-y une croix au centre.
+Vous ne pouvez pas tenir le disque à la main pour la calibration, ajouter un manche en fil de fer.
 2. Démarrer l'outil de calibration en renseignant la résolution de l'image projetée
 ```
 cd ~/src/SARndbox-2.6
@@ -76,9 +76,27 @@ cd ~/src/SARndbox-2.6
 3. Mettre l'image en plein écran **[F11]**
 4. Même combat que pour les outils précédents, il faut binder 2 touches. Appuyer sur une touche (Par ex. **[c]**) et bouger la souris. Choisir la fonction **Capture** en cliquant dans le menu. Un popup doit alors apparaitre, appuyer sur une seconde touche différente (par ex. **[v]**)
 Ces touches vont vous permettre de calibrer la projection et les hauteurs de sable du bac
-5. Positionner le disque en faisant correspondre la croix blanche avec la croix du disque
-6. Appuyer sur la touche choisie (**[c]**). Aprés un temps de pause, la croix blanche se déplace.
+5. Positionner le disque en faisant correspondre la croix blanche avec la croix du disque.
+6. Vous voyez à présent votre main et le disque. Si votre main n'apparait pas au bon endroit, pas de panique, aprés la calibration tout rentrera dans l'ordre.
+Le disque va être détecté par la Kinect, une fois détecté il apparait en vert et votre main en jaune. Si vous tenez le disque à la main, la Kinect ne peut pas les différencier et la calibration ne peut pas se faire. 
+6. Une fois le disque apparu en vert et les croix alignées, cappuyer sur la touche choisie (**[c]**). Aprés un temps de pause, la croix blanche se déplace.
+Vous devez maitenir le disque en position vert pendant 2 secondes.
+Ce message apparait alors dans la console.
+```
+CalibrateProjector: Capturing 60 tie point frames...done
+```
 7. Répéter l'opération
-
+8. Si la calibration est ok, un message de ce type apparait dans la console.
+```
+  -323.634      -16.502      856.369       123602
+   59.6915     -480.355      342.951      60259.6
+  0.146643   -0.0209159     0.988968      162.584
+RMS calibration residual: 10.2281
+Z range of collected tie points: [-0.0220997, -0.0187916]
+```
+9. Si ce message apparait, ce n'est pas bon. Il faut alors reprendre la calibration, la croix blanche revient au premier point.
+```
+Calibration error: Some tie points have negative projection weights. Please start from scratch
+```
 # Utilisation
 
