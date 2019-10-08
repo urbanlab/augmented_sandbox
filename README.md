@@ -60,8 +60,8 @@ RawKinectViewer -compress 0
 (   48.7936140481,    36.4780970044,     -91.74159795)
 ```
 
-### Calibration du bac à sable
-![Vidéo de calibration 10:10](https://www.youtube.com/watch?v=EW2PtRsQQr0&feature=youtu.be&t=10m10s)
+## Calibration du bac à sable
+[Vidéo de calibration 10:10](https://www.youtube.com/watch?v=EW2PtRsQQr0&feature=youtu.be&t=10m10s)
 
 Ensuite, il faut calibrer la projection + l'amplitude de hauteur de sable dans le bac.
 Le bac doit être rempli de sable.
@@ -101,9 +101,20 @@ Z range of collected tie points: [-0.0220997, -0.0187916]
 ```
 Calibration error: Some tie points have negative projection weights. Please start from scratch
 ```
-# Utilisation
-Creusez des reliefs pour faire apparaitre les nappes phréatiques.
-Formez des montagnes pour faire apparaître la neige.
 
-Mettre la main ouverte au dessus du bas permet de faire pleuvoir :D !
+## Démarrage auto / Icone sur le bureau
+Plusieurs étapes permettent de créer un icone sur le bureau ou de lancer l'appli au démarrage.
+Adaptez :
+- en remplacant *xed* par *nano*
+- mettre les chemins en phase avec les chemins réels
+- remplacer *DEsktop* par *Bureau*
+
+Pour l'icone sur le bureau, Ubntu va demander une confirmation. Cliquer sur *Faire confiance*.
+
+
+
+# Utilisation
+. Creusez des reliefs pour faire apparaitre les nappes phréatiques.
+. Formez des montagnes pour faire apparaître la neige.
+. Mettre la main ouverte au dessus du bac permet de faire pleuvoir :D !
 
