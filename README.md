@@ -38,18 +38,22 @@ Lors des étapes de calibration de la caméra  et , et de la projection, l'idée
 
 1. Démarrer RawKinectViewer (*Step 7 de la procédure*) : 
 ```
-cd ~/augmented_sandbox/src/SARndbox-2.5
+cd augmented_sandbox/src/SARndbox-2.6
 RawKinectViewer -compress 0
 ```
+1 bis. A ce stade on peut régler la Kinect pour que la zone turquoise (le bac) soit le plus présente à l'écran, tout en  gardant les bords du bac (en bleu foncé) présents à l'écran
+x. Faire Clic-droit, et cocher Averaage frames. Cela figera l'image le temps des réglages.
 2. Appuyer sur une touche non affectée (par exemple : **[1]** ) et bouger la souris en même temps (Step 8 de la procédure)
 3. Choisir dans le menu la fonction correspondante : **Extract Plane**
 4. Appuyer sur **[1]** et tirer sur l'écran le rectangle correspondant aux quatre coins supérieurs du bac (Attention, pas de retour visuel, bien checker ce qu'il se passe dans la console)
 5. Dans la console, apparait l'équation du plan de la caméra sous la forme : 
 ```Camera-space plane equation: x * <some vector> = <some offset>```
+Si vous obtenez un message "Could not extract palne equation", vous n'avez probablement pas figer l'image (voir Step x.
 6. Editer le fichier de configuration (nano etc/SARndbox-2.6/BoxLayout.txt) et recopier dans le fichier l'équation sous la forme : 
 ```<some vector>, <some offset>```
 7. Sélectionne une touche **[2]**, bouger la souris, choisir la fonction **Measure 3D Positions**
-8. Cliquer sur l'écran les 4 coins dans l'ordre suivant : Bas-Gauche, Bas-Droite, Haut-Gauche, Haut-Droite
+8. Positionner la souris sur l'écran aux 4 coins du bac dans l'ordre suivant : Bas-Gauche, Bas-Droite, Haut-Gauche, Haut-Droite
+8 bis. Appuyer sur 2 quand la position de la souris vous convient, chaque appui va "printer" une coordonnée dans la console
 9. Continuer l'édition du fichier de configuration (*nano etc/SARndbox-2.6/BoxLayout.txt*) et copier-coller les coordonées
 10. C'est fini, le fichier doit ressembler à ça. Enregistrez le.
 ```
@@ -69,8 +73,8 @@ Essayez de créer un relief avec des points hauts et des points bas (Ex : une mo
 
 1. Régler le projecteur pour que l'image recouvre la totalité du bac.
 2. Vous aurez besoin d'une mire, l'outil de calibration attend un disque blanc de 120 mm. C'est précisément la taille d'un CD recouvert de papier. Tracez-y une croix au centre.
-Vous ne pouvez pas tenir le disque à la main pour la calibration, ajouter un manche en fil de fer.
-3. Démarrer l'outil de calibration en renseignant la résolution de l'image projetée
+Vous ne pouvez pas tenir le disque à la main pour la calibration, ajouter un manche (fil de fer, régle, etc.).
+3. Démarrer l'outil de calibration en renseignant la résolution de l'image projetée (config actuelle : 1024  x 768)
 ```
 cd ~/src/SARndbox-2.6
 ./bin/CalibrateProjector -s <width> <height>
@@ -82,7 +86,7 @@ Ces touches vont vous permettre de calibrer la projection et les hauteurs de sab
 7. Positionner le disque en faisant correspondre la croix blanche avec la croix du disque.
 8. Vous voyez à présent votre main et le disque. Si votre main n'apparait pas au bon endroit, pas de panique, aprés la calibration tout rentrera dans l'ordre.
 Le disque va être détecté par la Kinect, une fois détecté il apparait en vert et votre main en jaune. Si vous tenez le disque à la main, la Kinect ne peut pas les différencier et la calibration ne peut pas se faire. 
-9. Une fois le disque apparu en vert et les croix alignées, cappuyer sur la touche choisie (**[c]**). Aprés un temps de pause, la croix blanche se déplace.
+9. Une fois le disque apparu en vert et les croix alignées, appuyer sur la touche choisie (**[c]**). Aprés un temps de pause, la croix blanche se déplace.
 Vous devez maitenir le disque en position vert pendant 2 secondes.
 Ce message apparait alors dans la console.
 ```
