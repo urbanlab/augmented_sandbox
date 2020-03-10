@@ -41,21 +41,21 @@ Lors des étapes de calibration de la caméra  et , et de la projection, l'idée
 cd augmented_sandbox/src/SARndbox-2.6
 RawKinectViewer -compress 0
 ```
-1 bis. A ce stade on peut régler la Kinect pour que la zone turquoise (le bac) soit le plus présente à l'écran, tout en  gardant les bords du bac (en bleu foncé) présents à l'écran
-x. Faire Clic-droit, et cocher Averaage frames. Cela figera l'image le temps des réglages.
-2. Appuyer sur une touche non affectée (par exemple : **[1]** ) et bouger la souris en même temps (Step 8 de la procédure)
-3. Choisir dans le menu la fonction correspondante : **Extract Plane**
-4. Appuyer sur **[1]** et tirer sur l'écran le rectangle correspondant aux quatre coins supérieurs du bac (Attention, pas de retour visuel, bien checker ce qu'il se passe dans la console)
-5. Dans la console, apparait l'équation du plan de la caméra sous la forme : 
+2. A ce stade on peut régler la Kinect pour que la zone turquoise (le bac) soit le plus présente à l'écran, tout en  gardant les bords du bac (en bleu foncé) présents à l'écran
+3. Faire Clic-droit, et cocher Averaage frames. Cela figera l'image le temps des réglages.
+4. Maintenir sur une touche non affectée (par exemple : **[1]** ) et bouger la souris en même temps (Step 8 de la procédure)
+5. Choisir dans le menu la fonction correspondante : **Extract Plane**
+6. Positionner la souris sur le coin supérieur gauche du rectangel bleu ciel. Maintenir sur **[1]**, glisser jusqu'au coin inférieur droit, lacher la touche. (Attention, pas de retour visuel, bien checker ce qu'il se passe dans la console)
+7. Dans la console, apparait l'équation du plan de la caméra sous la forme : 
 ```Camera-space plane equation: x * <some vector> = <some offset>```
 Si vous obtenez un message "Could not extract palne equation", vous n'avez probablement pas figer l'image (voir Step x.
-6. Editer le fichier de configuration (nano etc/SARndbox-2.6/BoxLayout.txt) et recopier dans le fichier l'équation sous la forme : 
+8. Editer le fichier de configuration (nano etc/SARndbox-2.6/BoxLayout.txt) et recopier dans le fichier l'équation sous la forme : 
 ```<some vector>, <some offset>```
-7. Sélectionne une touche **[2]**, bouger la souris, choisir la fonction **Measure 3D Positions**
-8. Positionner la souris sur l'écran aux 4 coins du bac dans l'ordre suivant : Bas-Gauche, Bas-Droite, Haut-Gauche, Haut-Droite
-8 bis. Appuyer sur 2 quand la position de la souris vous convient, chaque appui va "printer" une coordonnée dans la console
-9. Continuer l'édition du fichier de configuration (*nano etc/SARndbox-2.6/BoxLayout.txt*) et copier-coller les coordonées
-10. C'est fini, le fichier doit ressembler à ça. Enregistrez le.
+9. Sélectionne une touche **[2]**, bouger la souris, choisir la fonction **Measure 3D Positions**
+10. Positionner la souris sur l'écran aux 4 coins du bac dans l'ordre suivant : Bas-Gauche, Bas-Droite, Haut-Gauche, Haut-Droite
+11. Appuyer sur 2 quand la position de la souris vous convient, chaque appui va "printer" une coordonnée dans la console
+12. Continuer l'édition du fichier de configuration (*nano etc/SARndbox-2.6/BoxLayout.txt*) et copier-coller les coordonées
+13. C'est fini, le fichier doit ressembler à ça. Enregistrez le.
 ```
 (-0.0076185, 0.0271708, 0.999602), -98.0000
 (  -48.6846899089,   -36.4482382583,   -94.8705084084)
